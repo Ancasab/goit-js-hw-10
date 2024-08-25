@@ -20,7 +20,7 @@ async function fetchBreeds() {
     
     loaderElement.style.visibility = 'visible';
     errorElement.style.visibility = 'hidden';
-    const response = await axios.get('https://api.thecatapi.com/v1/breeds?api_key=live_qZuYx3rGEnTsT5CEggwmg46wjLVKCaUJFGjXpuyIw9LbBP5gLRoPCpKY5ZTkPuKw');
+    const response = await axios.get('https://api.thecatapi.com/v1/breeds');
     
     const breeds = response.data;
 
@@ -50,7 +50,7 @@ async function fetchCatByBreed(breedId) {
     loaderElement.style.visibility = 'visible';
     errorElement.style.visibility = 'hidden';
 
-    const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=live_qZuYx3rGEnTsT5CEggwmg46wjLVKCaUJFGjXpuyIw9LbBP5gLRoPCpKY5ZTkPuKw`);
+    const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
     const catData = response.data[0]; 
 
 
@@ -62,7 +62,6 @@ async function fetchCatByBreed(breedId) {
     `;
 
     loaderElement.style.visibility = 'hidden'
-    // catInfoElement.style.visibility = 'visible';
 
   } catch (error) {
     Notiflix.Notify.failure('Failed to fetch cat information. Please try again later.');
