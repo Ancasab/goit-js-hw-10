@@ -64,7 +64,7 @@ async function fetchCatByBreed(breedId) {
     loaderElement.style.visibility = 'hidden'
 
   } catch (error) {
-    Notiflix.Notify.failure('Failed to fetch cat information. Please try again later.');
+    Notiflix.Notify.failure('Failed to fetch cat information. Please try again.');
    
     errorElement.style.visibility = 'visible';
   } finally {
